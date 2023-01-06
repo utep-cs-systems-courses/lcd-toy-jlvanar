@@ -1,5 +1,7 @@
 #include <msp430.h>
 #include "libTimer.h"
+#include "lcdutils.h"
+#include "lcddraw.h"
 #include "state_machines.h"
 
 
@@ -23,11 +25,11 @@ void main(void)
   configureClocks();/* master oscillator, CPU & periph clocks */
   enableWDTInterrupts();/* enable time-based interrupts */
   buzzer_init();
-  led_init();
+  lcd_init();
   switch_init();
   or_sr(0x8);/* Enables Interrupts */
-  clearScreen(COLOR_BLACK);
-
+  clearScreen(COLOR_GREEN);
+  draw_dude(50, 50);
 
 
   while(1){

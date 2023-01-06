@@ -6,7 +6,7 @@
 #include "lcddraw.h"
 #include "state_machines.h"
 #include "switches.h"
-#include "draw_shapes.h"
+#include "shape.h"
 #include "buzzer.h"
 
 
@@ -87,6 +87,7 @@ void full_stop()
 {
   clearScreen(COLOR_BLACK);
   button_state = 0;
+  buzzer_set_period(0);
   count = 0;
   green_on = 0;
   led_update();
@@ -111,4 +112,4 @@ void dim_80()
     }
   led_update();
 }
-}
+

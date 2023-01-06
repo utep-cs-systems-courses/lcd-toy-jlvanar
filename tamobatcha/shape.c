@@ -1,4 +1,7 @@
 #include <msp430.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "lcddraw.h"
 #include "shape.h"
 
@@ -189,4 +192,33 @@ void draw_dude(u_char start_col, u_char start_row)
   drawPixel(start_col+21, start_row+9, COLOR_BLACK);
 
   //last headphone row
+  fillRectangle(start_col, start_row+10, 9, 1, COLOR_BLACK);
+  fillRectangle(start_col+10, start_row+10, 2, 1, COLOR_CYAN);
+  fillRectangle(start_col+12, start_row+10, 9, 1, COLOR_BROWN);
+  drawPixel(start_col+21, start_row+10, COLOR_BLACK);
+
+  fillRectangle(start_col+1, start_row+11, 10, 1, COLOR_BLACK);
+  fillRectangle(start_col+12, start_row+11, 6, 1, COLOR_BROWN);
+  fillRectangle(start_col+19, start_row+11, 2, 1, COLOR_BLACK);
+
+  fillRectangle(start_col+2, start_row+12, 3, 1, COLOR_BLACK);
+  fillRectangle(start_col+6, start_row+12, 3, 1, COLOR_BLACK);
+  drawPixel(start_col+9, start_row+12, COLOR_CYAN);
+  drawPixel(start_col+10, start_row+12, COLOR_PURPLE);
+  drawPixel(start_col+11, start_row+12, COLOR_CYAN);
+  drawPixel(start_col+12, start_row+12, COLOR_PURPLE);
+  drawPixel(start_col+13, start_row+12, COLOR_CYAN);
+  drawPixel(start_col+14, start_row+12, COLOR_PURPLE);
+  drawPixel(start_col+15, start_row+12, COLOR_CYAN);
+  fillRectangle(start_col+16, start_row+12, 2, 1, COLOR_BLACK);
+
+  fillRectangle(start_col+3, start_row+13, 2, 1, COLOR_BLACK);
+  drawPixel(start_col+6, start_row+13, COLOR_BLACK);
+  fillRectangle(start_col+7, start_row+13, 11, 1, COLOR_CYAN);
+  drawPixel(start_col+8, start_row+13, COLOR_PURPLE);
+  drawPixel(start_col+10, start_row+13, COLOR_PURPLE);
+  drawPixel(start_col+12, start_row+13, COLOR_PURPLE);
+  drawPixel(start_col+14, start_row+13, COLOR_PURPLE);
+  drawPixel(start_col+16, start_row+13, COLOR_PURPLE);
+  drawPixel(start_col+18, start_row+13, COLOR_BLACK);
 }

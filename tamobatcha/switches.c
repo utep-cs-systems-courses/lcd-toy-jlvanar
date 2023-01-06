@@ -1,6 +1,6 @@
 #include "switches.h"
 
-int buttonstate = 0;
+char button_state = 0;
 char switch1_down;
 char switch2_down;
 char switch3_down;
@@ -16,7 +16,7 @@ switch_update_interrupt_sense()
 }
 
 void
-switch_init(void)
+switch_init()
 {
   P2REN |= SWITCHES;   /* resistor enable */
   P2IE |= SWITCHES;    /* interrupt enable */
@@ -26,7 +26,7 @@ switch_init(void)
 }
 
 void
-switch_interrupt_handler(void)
+switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
   button_state = ~p2val & SWITCHES;

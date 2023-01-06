@@ -20,7 +20,7 @@ extern char switch_state_changed;
 extern char button_state;
 
 
-void switch_init(void);
-void switch_interrupt_handler(void);
+void switch_init();
+void switch_interrupt_handler();
 
 #endif
