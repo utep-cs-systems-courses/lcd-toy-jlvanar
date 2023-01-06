@@ -10,7 +10,7 @@ short redrawScreen = 1;
 void wdt_c_handler()
 {
   static int blinkCount = 0;
-  if(++blinkCount == 250){
+  if(++blinkCount == 150){
     blinkCount = 0;
     redrawScreen = 1;
   }
@@ -47,6 +47,7 @@ void main(void)
 	break;
       case 4:
 	shape_switch();
+	pulsing();
 	break;
       }
     }

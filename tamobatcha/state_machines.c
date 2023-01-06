@@ -19,31 +19,41 @@ void count_down5()
   switch (count)
     {
     case 0:
+      buzzer_set_period(5000);
       drawString11x16(20, 10, "5", COLOR_WHITE, COLOR_BLACK);
       count+=1;
       break;
 
     case 1:
+      buzzer_set_period(0);
+      buzzer_set_period(10000);
       drawString11x16(20, 35, "4", COLOR_WHITE, COLOR_BLACK);
       count+=1;
       break;
 
     case 2:
+      buzzer_set_period(0);
+      buzzer_set_period(15000);
       drawString11x16(20, 60, "3", COLOR_WHITE, COLOR_BLACK);
       count++;
       break;
 
     case 3:
+      buzzer_set_period(0);
+      buzzer_set_period(20000);
       drawString11x16(20, 85, "2", COLOR_WHITE, COLOR_BLACK);
       count++;
       break;
 
     case 4:
+      buzzer_set_period(0);
+      buzzer_set_period(25000);
       drawString11x16(20, 110, "1", COLOR_WHITE, COLOR_BLACK);
       count++;
       break;
 
     default:
+      buzzer_set_period(0);
       clearScreen(COLOR_BLACK);
       count = 0;
     }
@@ -51,32 +61,36 @@ void count_down5()
 
 void pulsing()
 {
-  static short period = 1500;
+  static short buzz;
   switch (pulse)
     {
     case 0:
-      period = 1600;
+      buzz = 16000;
+      pulse += 1;
       break;
 
     case 1:
-      period = 1400;
+      buzz = 14000;
+      pulse = pulse-1;
       break;
 
     }
-  short pulse_freq = 20000/period;
-  buzzer_set_period(pulse_freq);
+  buzzer_set_period(buzz);
       
 }
 
 void shape_switch()
 {
+  clearScreen(COLOR_GREEN);
   switch(pulse)
     {
     case 0:
-      draw_dude(screenWidth/2, 0);
+      erase_dude(screenWidth/2, 35, COLOR_GREEN);
+      draw_dude(screenWidth/2, 70);
       break;
 
     case 1:
+      erase_dude(screenWidth/2, 70, COLOR_GREEN);
       draw_dude(screenWidth/2, 35);
       break;
      
@@ -101,10 +115,15 @@ void dim_80()
       red_on = 1;
       dimming += 1;
       break;
-
     case 1:
+      dimming+=1;
+      break;
     case 2:
+      dimming+=1;
+      break;
     case 3:
+      dimming+=1;
+      break;
     case 4:
       red_on = 0;
       dimming = 0;

@@ -222,3 +222,7 @@ void draw_dude(u_char start_col, u_char start_row)
   drawPixel(start_col+16, start_row+13, COLOR_PURPLE);
   drawPixel(start_col+18, start_row+13, COLOR_BLACK);
 }
+void erase_dude(u_char start_col, u_char start_row, int bg_color)
+{
+  fillRectangle(start_col, start_row, 27, 14, bg_color);
+}
